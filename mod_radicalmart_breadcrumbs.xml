@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ @package   mod_radicalmart_breadcrumbs
+  ~ @version   1.0.0
+  ~ @author    Dmitriy Vasyukov - https://fictionlabs.ru
+  ~ @copyright Copyright (c) 2022 Fictionlabs. All rights reserved.
+  ~ @license   GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+  ~ @link      https://fictionlabs.ru/
+  -->
+
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>MOD_RADICALMART_BREADCRUMBS</name>
+    <author>Dmitriy Vasyukov</author>
+    <creationDate>March 2022</creationDate>
+    <copyright>Copyright (C) 2022 FictionLabs. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see LICENSE</license>
+    <authorEmail>info@fictionlabs.ru</authorEmail>
+    <authorUrl>https://fictionlabs.ru</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_RADICALMART_BREADCRUMBS_DESCRIPTION</description>
+
+    <!-- Module files -->
+    <files>
+        <filename module="mod_radicalmart_breadcrumbs">mod_radicalmart_breadcrumbs.php</filename>
+        <folder>tmpl</folder>
+        <folder>src</folder>
+    </files>
+
+    <!-- Module languages-->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_radicalmart_breadcrumbs.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_radicalmart_breadcrumbs.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_radicalmart_breadcrumbs.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_radicalmart_breadcrumbs.sys.ini</language>
+    </languages>
+
+    <!-- Module config-->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+
+                <field
+                        name="showHome"
+                        type="radio"
+                        label="MOD_RADICALMART_BREADCRUMBS_FIELD_SHOWHOME_LABEL"
+                        description="MOD_RADICALMART_BREADCRUMBS_FIELD_SHOWHOME_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="homeText"
+                        type="text"
+                        label="MOD_RADICALMART_BREADCRUMBS_FIELD_HOMETEXT_LABEL"
+                        description="MOD_RADICALMART_BREADCRUMBS_FIELD_HOMETEXT_DESC"
+                        showon="showHome:1"
+                />
+
+                <field
+                        name="showLast"
+                        type="radio"
+                        label="MOD_RADICALMART_BREADCRUMBS_FIELD_SHOWLAST_LABEL"
+                        description="MOD_RADICALMART_BREADCRUMBS_FIELD_SHOWLAST_DESC"
+                        default="1"
+                        filter="integer"
+                        class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                        validate="moduleLayout"
+                />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                        rows="3"
+                />
+
+                <field
+                        name="cache"
+                        type="list"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC"
+                        default="0"
+                        filter="integer"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="number"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                        default="0"
+                        filter="integer"
+                />
+
+                <field
+                        name="cachemode"
+                        type="hidden"
+                        default="itemid"
+                >
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
