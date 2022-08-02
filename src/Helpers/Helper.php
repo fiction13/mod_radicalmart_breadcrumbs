@@ -1,7 +1,7 @@
 <?php
 /*
  * @package   mod_radicalmart_breadcrumbs
- * @version   1.0.1
+ * @version   1.0.2
  * @author    Dmitriy Vasyukov - https://fictionlabs.ru
  * @copyright Copyright (c) 2022 Fictionlabs. All rights reserved.
  * @license   GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
@@ -10,6 +10,7 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Language\Multilanguage;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\Registry\Registry;
@@ -229,6 +230,9 @@ class modRadicalMartBreadcrumbsHelper
 			$model->setState('params', Factory::getApplication()->getParams());
 			$model->setState('filter.published', 1);
 			$model->setState('filter.show', 1);
+
+			// Set language filter state
+			$model->setState('filter.language', Multilanguage::isEnabled());
 
 			$this->categoriesModel = $model;
 		}

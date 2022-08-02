@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ @package   mod_radicalmart_breadcrumbs
-  ~ @version   1.0.1
+  ~ @version   1.0.2
   ~ @author    Dmitriy Vasyukov - https://fictionlabs.ru
   ~ @copyright Copyright (c) 2022 Fictionlabs. All rights reserved.
   ~ @license   GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
@@ -11,12 +11,12 @@
 <extension type="module" version="3.1" client="site" method="upgrade">
     <name>MOD_RADICALMART_BREADCRUMBS</name>
     <author>Dmitriy Vasyukov</author>
-    <creationDate>March 2022</creationDate>
+    <creationDate>August 2022</creationDate>
     <copyright>Copyright (C) 2022 FictionLabs. All rights reserved.</copyright>
     <license>GNU General Public License version 3 or later; see LICENSE</license>
     <authorEmail>info@fictionlabs.ru</authorEmail>
     <authorUrl>https://fictionlabs.ru</authorUrl>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <description>MOD_RADICALMART_BREADCRUMBS_DESCRIPTION</description>
 
     <!-- Module files -->
